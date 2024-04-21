@@ -1,0 +1,34 @@
+<form [formGroup]="empdetForm" (ngSubmit)="onsubmit()">
+    <div class="demo-page">
+      <main class="demo-page-content">
+        <section>
+          <div class="href-target" id="structure"></div>
+          <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-layers">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+            ADD EMPLOYEE DETAIL
+          </h1>
+          <div class="nice-form-group">
+            <label>Current Address</label>
+            <textarea formControlName="currentAdd" cols="30" rows="2"></textarea>
+          </div>
+          <div class="nice-form-group">
+            <label>Permanent Address</label>
+            <textarea formControlName="permanentAdd" cols="30" rows="2"></textarea>
+          </div>
+          <div class="nice-form-group">
+            <label>Family Members</label>
+            <input type="number" formControlName="familyMembers" />
+          </div>
+          <br>
+          <button class="btn btn-info profile-button" type="submit">Save</button>
+          <span style="margin-left: 1300px;"></span>
+        </section>
+    </main>
+</div>
+</form>

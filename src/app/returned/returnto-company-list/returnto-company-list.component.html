@@ -1,0 +1,33 @@
+<section>
+    <!--for demo wrap-->
+    <h1>RETURNED TO COMPANY LIST</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Company Name</th>
+            <th>Returned Date</th>
+            <th>Returned Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let item of productList">
+            <td>{{item.tradeName}}</td>
+            <td>{{item.companyName}}</td>
+            <td>{{item.returnedDate}}</td>
+            <td>{{item.returnedAmount}}</td>
+            <td>
+              <i class="material-icons" [routerLink]="['/compretedit/',item.id]">edit</i>
+              <i class="material-icons" (click)="delete(item.id)">delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

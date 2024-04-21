@@ -1,0 +1,34 @@
+<section>
+    <h1>Fixed Table header</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Education</th>
+            <th>Experience</th>
+            <th>Reference</th>
+            <th>Employee Detail ID</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let item of employeeList">
+            <td>{{item.name}}</td>
+            <td>{{item.education}}</td>
+            <td>{{item.experience}}</td>
+            <td>{{item.reference}}</td>
+            <td>{{item.employeeDetail}}</td>
+            <td>
+              <i class="material-icons" [routerLink]="['/profile/',item.id]">person2</i>
+              <i class="material-icons" (click)="confirmBox(item)">delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

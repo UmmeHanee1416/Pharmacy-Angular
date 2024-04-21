@@ -1,0 +1,111 @@
+<form [formGroup]="custForm" (ngSubmit)="onsubmit()" *ngIf="!confirm">
+    <div class="demo-page">
+        <main class="demo-page-content">
+            <section>
+                <div class="href-target" id="structure"></div>
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-layers">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                    ADD CUSTOMER
+                </h1>
+                <div class="nice-form-group">
+                    <label>Customer Name</label>
+                    <input type="text" formControlName="name" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Customer Contact No</label>
+                    <input type="text" formControlName="contact" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Sales Date</label>
+                    <input type="date" placeholder="Registered Quantity" formControlName="purchaseDate" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Payment Method</label>
+                    <input type="text" formControlName="payMethod" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Employee ID</label>
+                    <select class="form-select form-control" aria-label="Default select example" formControlName="empId"
+                        placeholder="select one">
+                        <option value="" selected>Select one</option>
+                        <option *ngFor="let item of empList" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn profile-button" type="submit" style="background-color: #43a0ec;">Save</button>
+                <span style="margin-left: 1300px;"></span>
+                <span *ngIf="confirm">saved</span><br>
+
+
+
+
+                <button class="btn profile-button" type="button" (click)="onclick()"
+                    style="background-color: #43a0ec;">Add Sales</button>
+                <div *ngIf="expression">
+                    <form [formGroup]="saledetForm" (ngSubmit)="onsubmitDet()">
+                        <div class="row">
+                            <div class="col">
+                                <div class="nice-form-group">
+                                    <label>Product Name</label>
+                                    <select class="form-select form-control" aria-label="Default select example"
+                                        (change)="onSelectChange($event)" formControlName="productId"
+                                        placeholder="select one">
+                                        <option *ngFor="let item of prods" value="{{item}}">{{item[0]}}</option>
+                                    </select>
+                                </div>
+                            </div> &nbsp;
+                            <div class="col">
+                                <div class="nice-form-group">
+                                    <label>Available Quantity</label>
+                                    <input type="number" placeholder="Product name" value="{{availableQt}}" readonly />
+                                </div>
+                            </div> &nbsp;
+                            <div class="col">
+                                <div class="nice-form-group">
+                                    <label>Product Quantity</label>
+                                    <input type="number" placeholder="Product name" formControlName="productQuantity" />
+                                </div>
+                            </div> &nbsp;
+                            <div class="col">
+                                <div class="nice-form-group">
+                                    <label> </label>
+                                    <button class="btn profile-button" type="submit"
+                                        style="margin-top: 25px; background-color: #43a0ec;">Save</button>
+                                </div>
+                            </div> &nbsp;
+                        </div>
+                    </form>
+                    <br>
+                </div><br>
+                <div *ngFor="let a of salesDetailsList" class="row">
+                    <div class="col">
+                        <div class="nice-form-group">
+                            <input type="text" placeholder="Product name" value="{{a.productId}}" readonly/>
+                        </div>
+                    </div> &nbsp;
+                    <div class="col">
+                        <div class="nice-form-group">
+                            <input type="text" placeholder="Product name" value="{{a.productQuantity}}" readonly />
+                        </div>
+                    </div> &nbsp;
+                    <div class="col">
+                        <!-- <div class="nice-form-group">
+                <label> </label>
+                <button class="btn btn-danger profile-button" type="button">Delete</button>
+            </div> -->
+                    </div>
+                </div>
+
+
+
+
+            </section>
+        </main>
+    </div>
+</form>

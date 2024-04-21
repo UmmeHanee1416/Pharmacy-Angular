@@ -1,0 +1,124 @@
+<form [formGroup]="empForm" (ngSubmit)="onsubmit()">
+    <div class="demo-page">
+        <main class="demo-page-content">
+            <section>
+                <div class="href-target" id="structure"></div>
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-layers">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                    ADD EMPLOYEE
+                </h1>
+                <div class="nice-form-group">
+                    <label>Employee Name</label>
+                    <input type="text" formControlName="name"/>
+                </div>
+                <fieldset class="nice-form-group">
+                    <legend>Select Education</legend>
+                    <div class="nice-form-group">
+                        <input type="radio" formControlName="education" id="hsc" name="education" value="HSC" />
+                        <label for="hsc">HSC</label>
+                    </div>
+
+                    <div class="nice-form-group">
+                        <input type="radio" formControlName="education" id="ba" name="education" value="BA" />
+                        <label for="ba">BA</label>
+                    </div>
+
+                    <div class="nice-form-group">
+                        <input type="radio" formControlName="education" id="diploma" name="education" value="Diploma" />
+                        <label for="diploma">Diploma</label>
+                    </div>
+                </fieldset>
+                <div class="nice-form-group">
+                    <label>Experience</label>
+                    <input type="number" formControlName="experience" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Reference</label>
+                    <textarea rows="2" formControlName="reference"></textarea>
+                </div>
+                <div class="nice-form-group">
+
+                </div>
+                <br>
+                <div *ngIf="empDetails">
+                    <label class="text">Employee Detail</label>
+                    <br>
+                    <span class="text1">
+                        Permanent Address:
+                    </span>
+                    <br>
+                    <span class="text2">
+                        {{empDetails.permanentAdd}}
+                    </span>
+                    <br>
+                    <span class="text1">
+                        Current Address:
+                    </span>
+                    <br>
+                    <span class="text2">
+                        {{empDetails.currentAdd}}
+                    </span>
+                    <br>
+                    <span class="text1">
+                        Family Members:
+                    </span>
+                    <br>
+                    <span class="text2">
+                        {{empDetails.familyMembers}}
+                    </span>
+                </div>
+
+
+                <br>
+                <div *ngIf="expression">
+                    <form [formGroup]="empdetForm" (ngSubmit)="onsubmitdet()">
+                        <div class="demo-page">
+                            <main class="demo-page-content">
+                                <section>
+                                    <div class="href-target" id="structure"></div>
+                                    <h1>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-layers">
+                                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                            <polyline points="2 17 12 22 22 17" />
+                                            <polyline points="2 12 12 17 22 12" />
+                                        </svg>
+                                        ADD EMPLOYEE DETAIL
+                                    </h1>
+                                    <div class="nice-form-group">
+                                        <label>Current Address</label>
+                                        <textarea formControlName="currentAdd" cols="30" rows="2"></textarea>
+                                    </div>
+                                    <div class="nice-form-group">
+                                        <label>Permanent Address</label>
+                                        <textarea formControlName="permanentAdd" cols="30" rows="2"></textarea>
+                                    </div>
+                                    <div class="nice-form-group">
+                                        <label>Family Members</label>
+                                        <input type="number" formControlName="familyMembers" />
+                                    </div>
+                                    <br>
+                                    <button class="btn profile-button" type="submit" style="background-color: #43a0ec;">Confirm</button>
+                                    <span style="margin-left: 1300px;"></span>
+                                </section>
+                            </main>
+                        </div>
+                    </form>
+                </div>
+                <button class="btn profile-button" type="submit" style="background-color: #43a0ec;">Save</button> &nbsp; 
+                <button *ngIf="!empDetails&&!expression" class="btn" type="button" (click)="onclick()" style="background-color: #43a0ec;">Add Detail</button>
+                <!-- <button *ngIf="empDetails" class="btn btn-info" disabled type="button" (click)="onclick()">Add
+                    Detail</button> -->
+                <span style="margin-left: 1300px;"></span>
+            </section>
+        </main>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="nice-form-group">
+      <div class="col-4">
+        <label>Search By All</label>
+      </div>
+      <div class="col-4">
+        <select class="form-select form-control" aria-label="Default select example" placeholder="select one">
+          <option value="" selected>Select one</option>
+          <option></option>
+        </select>
+        <button class="btn btn-success my-2 my-sm-0">Search</button> &nbsp;
+      </div>
+      <div class="col-4">
+        <input type="search" placeholder="Search all the things" value="" />
+      </div>
+    </div>
+  </div>
+  <section>
+    <h1>Fixed Table header</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Doctor ID</th>
+            <th>Representative Name</th>
+            <th>Representative Contact</th>
+            <th>Supply Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let item of companyList">
+            <td>{{item.name}}</td>
+            <td>{{item.doctorID}}</td>
+            <td>{{item.representativeName}}</td>
+            <td>{{item.representativeContact}}</td>
+            <td>{{item.supplyAddress}}</td>
+            <td>
+              <i class="material-icons" [routerLink]="['/compedit/',item.name]">edit</i>
+              <i class="material-icons" (click)="confirmBox(item)">delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

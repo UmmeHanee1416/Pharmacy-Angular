@@ -1,0 +1,73 @@
+<div class="demo-page">
+    <main class="demo-page-content">
+        <section>
+            <div class="href-target" id="structure"></div>
+            <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-layers">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                </svg>
+                PROFILE OF {{employee.name | uppercase}}
+            </h1>
+            <button class="material-icons" [routerLink]="['/empedit/',employee.id]" style="margin-left: 450px;">edit</button>
+            <span class="text1">
+                Employee Name:
+            </span>
+            <br>
+            <span class="text2">
+                {{employee.name}}
+            </span><br>
+            <span class="text1">
+                Education:
+            </span>
+            <br>
+            <span class="text2">
+                {{employee.education}}
+            </span><br>
+            <span class="text1">
+                Experience:
+            </span>
+            <br>
+            <span class="text2">
+                {{employee.experience}}
+            </span><br>
+            <span class="text1">
+                Reference:
+            </span><br>
+            <span class="text2">
+                {{employee.reference}}
+            </span>
+            <br>
+            <label class="text">Employee Detail</label>
+            <br>
+            <span class="text1">
+                Permanent Address:
+            </span>
+            <br>
+            <span class="text2">
+                {{empDetails.permanentAdd}}
+            </span>
+            <br>
+            <span class="text1">
+                Current Address:
+            </span>
+            <br>
+            <span class="text2">
+                {{empDetails.currentAdd}}
+            </span>
+            <br>
+            <span class="text1">
+                Family Members:
+            </span>
+            <br>
+            <span class="text2">
+                {{empDetails.familyMembers}}
+            </span>
+            <br>
+            <span style="margin-left: 1300px;"></span>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,55 @@
+<form [formGroup]="compForm" (ngSubmit)="onsubmit()">
+  <div class="demo-page">
+    <main class="demo-page-content">
+      <section>
+        <div class="href-target" id="structure"></div>
+        <h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-layers">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+          ADD COMPANY DETAIL
+        </h1>
+        <div class="nice-form-group">
+          <label>Company Name</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="nice-form-group">
+          <label>Doctor Id</label>
+          <!-- <input type="text" formControlName="doctorID" /> -->
+          <select class="form-select form-control" aria-label="Default select example" formControlName="doctorID"
+            placeholder="select one">
+            <option selected>Select One</option>
+            <option *ngFor="let item of doctorList" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label>Representative's Name</label>
+          <input type="text" formControlName="representativeName" />
+        </div>
+        <div class="nice-form-group">
+          <label>Representative's Contact</label>
+          <input type="text" formControlName="representativeContact" />
+        </div>
+        <div class="nice-form-group">
+          <label>Supply Address</label>
+          <input type="text" formControlName="supplyAddress" />
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="nice-form-group">
+              <label> </label>
+              <button class="btn profile-button" type="submit" style="margin-top: 25px; background-color: #43a0ec;">Save</button>
+            </div>
+          </div>
+          <div class="col">
+                <button class="btn profile-button" type="button" style="margin-top: 50px; margin-left: 140px; background-color: #43a0ec;" [routerLink]="['/adddoctor']">Add Doctor</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</form>

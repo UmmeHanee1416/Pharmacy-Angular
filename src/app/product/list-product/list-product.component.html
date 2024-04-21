@@ -1,0 +1,64 @@
+<!-- <app-product-home></app-product-home> -->
+<form action="" [formGroup]="searchForm">
+  <div class="row">
+    <div class="nice-form-group">
+      <div class="col-4">
+        <label>Search By {{searchForm.value.selectvalue}}</label>
+      </div>
+      <div class="col-4">
+        <select class="form-select form-control" aria-label="Default select example" placeholder="select one" formControlName="selectvalue">
+          <option selected>Search By All</option>
+          <option value="tName">Trade Name</option>
+          <option value="cName">Company Name</option>
+          <option value="gName">Generic Name</option>
+        </select>
+        <button class="btn btn-success my-2 my-sm-0" (click)=" getByParam()">Search</button> &nbsp;
+      </div>
+      <div class="col-4">
+        <input type="search" placeholder="Search all the things" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchbox" />
+      </div>
+    </div>
+  </div>
+</form>
+<section>
+    <h1>LIST OF MEDICINES</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Trade Name</th>
+            <th>Company Name</th>
+            <th>Generic Name</th>
+            <th>Registered Quantity</th>
+            <th>Sold Quantity</th>
+            <th>Remain Quantity</th>
+            <th>MFD</th>
+            <th>EXP</th>
+            <th>Unit Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let item of productList">
+            <td>{{item.tradeName}}</td>
+            <td>{{item.companyName}}</td>
+            <td>{{item.generics}}</td>
+            <td>{{item.regsrtQuantity}}</td>
+            <td>{{item.soldQuantity}}</td>
+            <td>{{item.remainedQuantity}}</td>
+            <td>{{item.mfd}}</td>
+            <td>{{item.exp}}</td>
+            <td>{{item.sellPrice}}</td>
+            <td>
+              <i class="material-icons" [routerLink]="['/proedit/',item.tradeName]">edit</i>
+              <i class="material-icons" (click)="confirmBox(item)">delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

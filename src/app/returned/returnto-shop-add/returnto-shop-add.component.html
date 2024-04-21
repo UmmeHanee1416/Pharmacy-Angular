@@ -1,0 +1,63 @@
+<form [formGroup]="productForm" (ngSubmit)="onsubmit()">
+    <div class="demo-page">
+      <main class="demo-page-content">
+        <section>
+          <div class="href-target" id="structure"></div>
+          <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-layers">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+            ADD RETURN PRODUCT
+          </h1>
+          <div class="nice-form-group">
+            <label>Product Name</label>
+            <select class="form-select form-control" aria-label="Default select example" formControlName="tradeName" placeholder="select one">
+              <option selected>Select One</option>
+              <option *ngFor="let item of productList" value="{{item.tradeName}}">{{item.tradeName}}</option>
+            </select>
+          </div>
+          <div class="nice-form-group">
+            <label>Customer ID</label>
+            <select class="form-select form-control" aria-label="Default select example" formControlName="customer"
+              placeholder="select one">
+              <option selected>Select One</option>
+              <option *ngFor="let item of customerList" value="{{item.contact}}">{{item.contact}}</option>
+            </select>
+          </div>
+          <div class="nice-form-group">
+            <label>Sales Date</label>
+            <input type="date" formControlName="purchaseDate" />
+          </div>
+          <div class="nice-form-group">
+            <label>Returned Date</label>
+            <input type="date" formControlName="returnDate" />
+          </div>
+          <div class="nice-form-group">
+            <label>Returned Amount</label>
+            <input type="number" formControlName="returnQTY" />
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div class="nice-form-group">
+                <label>File upload</label>
+                <input type="file" (change)="selectFiles($event)"/>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="nice-form-group">
+                <label style="margin-bottom: 60px;"></label>
+                <button class="btn profile-button float-end" type="button" [disabled]="!selectedFiles" (click)="uploadFiles()" style="background-color: #43a0ec;">Confirm</button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button class="btn profile-button float-end" style="background-color: #43a0ec;" type="submit">Save</button>
+          <span style="margin-left: 1300px;"></span>
+        </section>
+    </main>
+</div>
+</form>

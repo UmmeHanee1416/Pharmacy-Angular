@@ -1,0 +1,380 @@
+<form [formGroup]="productForm" (ngSubmit)="onsubmit()">
+  <div class="demo-page">
+    <main class="demo-page-content">
+      <section>
+        <div class="href-target" id="structure"></div>
+        <h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-layers">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+          ADD PRODUCT
+        </h1>
+        <div class="nice-form-group">
+          <label>Product Name</label>
+          <input type="text" placeholder="Product name" formControlName="tradeName" />
+        </div>
+        <div class="nice-form-group">
+          <label>Company Name</label>
+          <select class="form-select form-control" aria-label="Default select example" formControlName="companyName"
+            placeholder="select one">
+            <option selected>Select One</option>
+            <option *ngFor="let item of companyList">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label>Generic Name</label>
+          <select class="form-select form-control" aria-label="Default select example" formControlName="generics" multiple style="padding-top: 30px;">
+            <option selected>Select One</option>
+            <option *ngFor="let item of GenericList" value="{{item.id}}" >{{item.genericName}}</option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label>Registered Quantity</label>
+          <input type="number" placeholder="Registered Quantity" formControlName="regsrtQuantity" />
+        </div>
+        <!-- <div class="nice-form-group">
+          <label>Sold Quantity</label>
+          <input type="number" placeholder="Sold Quantity" formControlName="soldQuantity" />
+        </div> -->
+        <div class="nice-form-group">
+          <label>Manufactured Date</label>
+          <input type="date" value="2018-07-22" formControlName="mfd" />
+        </div>
+        <div class="nice-form-group">
+          <label>Expiry Date</label>
+          <input type="date" value="2018-07-22" formControlName="exp" />
+        </div>
+        <div class="nice-form-group">
+          <label>M.R.P.</label>
+          <input type="number" placeholder="Selling Price" formControlName="sellPrice" />
+        </div>
+        <br>
+        <button class="btn profile-button" type="submit"  style="background-color: #43a0ec;">Save</button>
+        <span style="margin-left: 1300px;"></span>
+      </section>
+
+      <!-- <section>
+        <div class="href-target" id="input-types"></div>
+        <h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+            <line x1="21" y1="10" x2="3" y2="10" />
+            <line x1="21" y1="6" x2="3" y2="6" />
+            <line x1="21" y1="14" x2="3" y2="14" />
+            <line x1="21" y1="18" x2="3" y2="18" />
+          </svg>
+          Input types
+        </h1>
+        <p>All available input types are included</p>
+  
+        <div class="nice-form-group">
+          <label>Text</label>
+          <input type="text" placeholder="Your name" value="" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Phonenumber</label>
+          <input type="tel" placeholder="Your phonenumber" value="" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Url</label>
+          <input type="url" placeholder="www.google.com" value="" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Your password" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Search</label>
+          <input type="search" placeholder="Search all the things" value="" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Disabled field</label>
+          <input type="text" disabled placeholder="Your name" value="" />
+        </div>
+
+      </section>
+  
+      <section>
+        <div class="href-target" id="checkbox-and-radio"></div>
+  
+        <fieldset class="nice-form-group">
+          <div class="nice-form-group">
+            <input type="radio" name="radio" id="r-1" />
+            <label for="r-1">Radio button with label</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="radio" name="radio" id="r-2" />
+            <label for="r-2">
+              Radio button with label
+              <small>Radio can have additional information</small>
+            </label>
+          </div>
+        </fieldset>
+  
+        <fieldset class="nice-form-group">
+          <div class="nice-form-group">
+            <input type="checkbox" id="check-1" />
+            <label for="check-1">Checkbox with label</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="checkbox" id="check-2" />
+            <label for="check-2">
+              Checkbox with label
+              <small>I am additional information regarding this field</small>
+            </label>
+          </div>
+        </fieldset>
+        <br />
+        <p>
+          <strong style="display: block">Switch</strong>
+          If you want a checkbox to look like a switch, just add a
+          <code>.switch</code> class to the checkbox input element
+        </p>
+  
+        <fieldset class="nice-form-group">
+          <div class="nice-form-group">
+            <input type="checkbox" id="check-3" class="switch" />
+            <label for="check-3">Switch with label</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="checkbox" id="check-4" class="switch" />
+            <label for="check-4">
+              Switch with label
+              <small>I am additional information regarding this field</small>
+            </label>
+          </div>
+        </fieldset>
+  
+
+      </section>
+  
+      <section>
+        <div class="href-target" id="fieldset"></div>
+ 
+  
+        <fieldset class="nice-form-group">
+          <legend>Select your favorite framework</legend>
+          <div class="nice-form-group">
+            <input type="radio" name="radio" id="react" />
+            <label for="react">React</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="radio" name="radio" id="vue" />
+            <label for="vue">Vue</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="radio" name="radio" id="angular" />
+            <label for="angular">Angular</label>
+          </div>
+        </fieldset>
+  
+        <fieldset class="nice-form-group">
+          <legend>Select your favorite languages</legend>
+          <div class="nice-form-group">
+            <input type="checkbox" id="css" />
+            <label for="css">CSS</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="checkbox" id="html" />
+            <label for="html">HTML</label>
+          </div>
+  
+          <div class="nice-form-group">
+            <input type="checkbox" id="js" />
+            <label for="js">Javascript</label>
+          </div>
+        </fieldset>
+ 
+      </section>
+  
+      <section>
+        <div class="href-target" id="icons"></div>
+
+  
+        <div class="nice-form-group">
+          <label>Phonenumber</label>
+          <input type="tel" placeholder="Your phonenumber" value="" class="icon-left" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Url</label>
+          <input type="url" placeholder="www.google.com" value="" class="icon-left" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="" class="icon-left" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Your password" class="icon-left" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Phonenumber</label>
+          <input type="tel" placeholder="Your phonenumber" value="" class="icon-right" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Url</label>
+          <input type="url" placeholder="www.google.com" value="" class="icon-right" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="" class="icon-right" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Your password" class="icon-right" />
+        </div>
+  
+
+      </section>
+  
+      <section>
+        <div class="href-target" id="validation"></div>
+ 
+  
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="this is not a email adress" required />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="nice@forms.com" required />
+        </div>
+   
+      </section>
+  
+      <section>
+        <div class="href-target" id="date"></div>
+     
+  
+        <div class="nice-form-group">
+          <label>Month</label>
+          <input type="month" value="2018-05" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Week</label>
+          <input type="week" value="2017-W01" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Date</label>
+          <input type="date" value="2018-07-22" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Time</label>
+          <input type="time" value="13:30" />
+        </div>
+  
+        <details>
+          <summary>
+            <div class="toggle-code">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              Toggle code
+            </div>
+          </summary>
+          <script src="https://gist.github.com/nielsVoogt/2ae279af287e520f545285b0d7c45828.js"></script>
+        </details>
+      </section> -->
+
+      <!-- <section>
+        <div class="href-target" id="other"></div>
+        <h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-server">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+            <line x1="6" y1="6" x2="6.01" y2="6" />
+            <line x1="6" y1="18" x2="6.01" y2="18" />
+          </svg>
+          Other input types
+        </h1>
+  
+        <div class="nice-form-group">
+          <label>Textarea</label>
+          <textarea rows="5" placeholder="Your message"></textarea>
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Select</label>
+          <select>
+            <option>Please select a value</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </div>
+  
+        <div class="nice-form-group">
+          <label>File upload</label>
+          <input type="file" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Range slider</label>
+          <input type="range" min="0" max="15" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Number</label>
+          <input type="number" placeholder="1234" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Color</label>
+          <input type="color" />
+        </div>
+  
+      <details>
+          <summary>
+            <div class="toggle-code">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              Toggle code
+            </div>
+          </summary>
+          <script src="https://gist.github.com/nielsVoogt/f0480b1a2d0deda02138d61ec5c9f4d0.js"></script>
+        </details>
+      </section>  -->
+
+      <!-- <section> -->
+
+
+
+
+      <!-- </section>  -->
+
+
+    </main>
+  </div>
+</form>

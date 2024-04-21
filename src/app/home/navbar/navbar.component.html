@@ -1,0 +1,158 @@
+<!-- <nav class="menu" tabindex="0">
+  <div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+    <h2>ADMIN</h2>
+  </header>
+  <ul>
+    <li tabindex="0" class="icon-dashboard">
+      <a [routerLink]="['/home']" style="text-decoration: none; color: black;"><span>Dashboard</span></a>
+    </li>
+    <li tabindex="0" class="icon-customers">
+      <a [routerLink]="['/custhome']" style="text-decoration: none; color: black;"><span>Customers</span></a>
+    </li>
+    <li tabindex="0" class="icon-customers">
+      <a [routerLink]="['/prohome']" style="text-decoration: none; color: black;"><span>Products</span></a>
+    </li>
+    <li tabindex="0" class="icon-customers">
+      <a [routerLink]="['/returnhome']" style="text-decoration: none; color: black;"><span>Returns</span></a>
+    </li>
+    <li tabindex="0" class="icon-customers">
+      <a [routerLink]="['/emphome']" style="text-decoration: none; color: black;"><span>Employees</span></a>
+    </li>
+    <li tabindex="0" class="icon-customers">
+      <a [routerLink]="['/homepur']" style="text-decoration: none; color: black;"><span>Purchase</span></a>
+    </li>
+    <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+  </ul>
+</nav> -->
+
+
+
+
+
+<section class="app">
+  <aside class="sidebar">
+         <header>
+        <!-- Menu -->
+      </header>
+    <nav class="sidebar-nav">
+ 
+      <ul>
+        <li>
+          <a [routerLink]="['/dashboard']"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+          <!-- <ul class="nav-flyout">
+            <li>
+              <a href="#"><i class="ion-ios-color-filter-outline"></i>Derps</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-ios-clock-outline"></i>Times</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-android-star-outline"></i>Hates</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-heart-broken"></i>Beat</a>
+            </li>
+          </ul> -->
+        </li>
+        <li>
+          <a [routerLink]="['/custhome']"><i class="material-icons">shopping_cart</i> <span class="">Sales</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a  [routerLink]="['/custadd']"><i class="material-icons">shopping_basket</i>Add Sales</a>
+            </li>
+            <li>
+              <a [routerLink]="['/custlist']"><i class="material-icons">people</i>Customer List</a>
+            </li>
+            <li>
+              <a [routerLink]="['/saleslist']"><i class="material-icons">attach_money</i>Sales List</a>
+            </li>
+            <li>
+              <a [routerLink]="['/listgeneric']"><i class="material-icons">list</i>Generic List</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a [routerLink]="['/prohome']"><i class="material-icons">local_pharmacy</i> <span class="">Products</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a [routerLink]="['/proadd']"><i class="material-icons">medical_services</i>Add Medicine</a>
+            </li>
+            <li>
+              <a [routerLink]="['/addgeneric']"><i class="material-icons">view_module</i>Add Generic</a>
+            </li>
+            <li>
+              <a [routerLink]="['/compadd']"><i class="material-icons">business</i>Add Company</a>
+            </li>
+            <li>
+              <a [routerLink]="['/adddoctor']"><i class="material-icons">local_hospital</i>Add Doctor</a>
+            </li>
+             <!-- <li>
+              <a href="#"><i class="ion-ios-navigate-outline"></i>Ghostface</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a [routerLink]="['/returnhome']"><i class="material-icons">reply</i> <span class="">Returns</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a [routerLink]="['/returnshopadd']"><i class="material-icons">arrow_back</i>Add Shop Returning</a>
+            </li>
+            <li>
+              <a [routerLink]="['/returnshoplist']"><i class="material-icons">history</i>List Shop Returning</a>
+            </li>
+            <li>
+              <a [routerLink]="['/returncompadd']"><i class="material-icons">undo</i>Add Company Returning</a>
+            </li>
+            <li>
+              <a [routerLink]="['/returncomplist']"><i class="material-icons">list_alt</i>List Company Returning</a>
+            </li>
+            <!-- <li>
+              <a href="#"><i class="ion-ios-game-controller-a-outline"></i>Dork Mfer</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a [routerLink]="['/emphome']"><i class="material-icons">person</i> <span class="">Employees</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a [routerLink]="['/addEmp']"><i class="material-icons">supervisor_account</i>Add Employee</a>
+            </li>
+            <li>
+              <a [routerLink]="['/emplist']"><i class="material-icons">assignment_ind</i>Employee List</a>
+            </li>
+            <!-- <li>
+              <a [routerLink]="['/emplist']"><i class="ion-ios-paperplane-outline"></i>Employee Detail</a>
+            </li> -->
+            <!-- <li>
+              <a href="#"><i class="ion-android-star-outline"></i>Shop</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a [routerLink]="['/listpur']"><i class="material-icons">add_shopping_cart</i> <span class="">Purchase</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a [routerLink]="['/addpur']"><i class="material-icons">monetization_on</i>Add Purchase</a>
+            </li>
+            <li>
+              <a [routerLink]="['/listpur']"><i class="material-icons">receipt</i>List Purchase</a>
+            </li>
+            <!-- <li>
+              <a href="#"><i class="ion-ios-location-outline"></i>Where You</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-ios-locked-outline"></i>On Lock</a>
+            </li>
+             <li>
+              <a href="#"><i class="ion-ios-navigate-outline"></i>Ghostface</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="material-icons">account_circle</i> <span class="">Profile</span></a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</section>

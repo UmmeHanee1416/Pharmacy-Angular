@@ -1,0 +1,57 @@
+<section>
+  <form action="" [formGroup]="searchForm">
+    <div class="row" style="display: block;">
+      <div class="col-4" style="float: left;">
+        <label>Search By {{searchForm.value.selectvalue}}</label>
+      </div>
+      <div class="col-4" style="float: left;">
+        <span style="margin-top: 25px;"></span>
+        <input type="search" *ngIf="!expression"  placeholder="Search all the things" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchbox" />
+        <input type="date" *ngIf="expression" placeholder="Search all the things" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchbox" />
+      </div>
+      <div class="nice-form-group">
+        <div class="col-4" style="float: left;">
+          <select class="form-select form-control" aria-label="Default select example" placeholder="select one" formControlName="selectvalue">
+            <option value="all" selected>Search By All</option>
+            <option value="customer">Customer Contact</option>
+            <option value="sales">Sales Date</option>
+            <option value="employee">Employee ID</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <span style="margin-top: 25px;"></span>
+    <button class="btn btn-info my-2 my-sm-0" (click)=" getByParam()">Search</button> &nbsp;
+  </form>
+    <h1>Fixed Table header</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Customer Contact</th>
+            <th>Sales Date</th>
+            <th>Employee ID</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let item of customerList">
+            <td>{{item.name}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.purchaseDate}}</td>
+            <td>{{item.empId}}</td>
+            <td>
+              <i class="material-icons" [routerLink]="['/custedit/',item.contact]">edit</i>
+              <i class="material-icons" (click)="confirmBox(item)">delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
